@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+html {
+  font-size: 62.5%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+nav {
+  width: 100vw;
+  height: 10vh;
+  padding: 4rem;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+nav .logo h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+}
+nav .logo h1 span {
+  color: aqua;
+}
+nav .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+nav .links li a {
+  margin: 0 1rem;
+  font-size: 2rem;
+  color: cornsilk;
+  font-weight: bold;
+  position: relative;
+}
+nav .links li a::after {
+  content: "";
+  position: absolute;
+  background: aqua;
+  height: 3px;
+  width: 0%;
+  top: 30px;
+  right: 0;
+  transition: all 0.23s;
+}
+nav .links li a:hover::after {
+  width: 100%;
+  color: white;
+}
+nav .hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav div .sign-up li a {
+  color: cornsilk;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid aqua;
+  padding: 1rem 1.5rem;
+  transform: all 0.23s;
+  border-radius: 3px;
+}
+nav div .sign-up li a:hover {
+  border: none;
+  background: aqua;
+  color: black;
+  border-radius: 3px;
+}
+nav div .burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 3rem;
+  cursor: pointer;
+  position: relative;
+  display: none;
+}
+nav div .burger div {
+  height: 4px;
+  width: 2.7rem;
+  background: cornsilk;
+  margin: 4px;
+  transition: all 0.23s;
+}
+nav div .burger-active .b-1 {
+  transform: rotate(130deg);
+  position: absolute;
+  background: aqua;
+}
+nav div .burger-active .b-2 {
+  transform: rotate(-130deg);
+  background: aqua;
+}
+nav div .burger-active .b-3 {
+  display: none;
+}
+/* * media queries */
+@media (max-width: 900px) {
+  html {
+    font-size: 55%;
+  }
+  nav .links {
+    flex-direction: column;
+    width: 100vw;
+    height: 40vh;
+    background-color: black;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    transform: translateY(-400px);
+    transition: all 0.23s;
+    border-bottom: 1px solid aqua;
+    z-index: -1;
+  }
+  nav div .burger {
+    display: block;
+  }
+  nav div .sign-up li a {
+    border: none;
+  }
+}
+@media (max-width: 500px) {
+  nav div .sign-up li a {
+    display: none;
+  }
+}
+/* js links */
+nav .show-links {
+  transform: translateY(0px);
+}
